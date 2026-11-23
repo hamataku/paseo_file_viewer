@@ -4,12 +4,14 @@ import { createLinkedMessage, LINKED_MESSAGE_KIND, linkedMessageSchema } from ".
 import { messages } from "./client/messages";
 import { currentOpenIn, openInViewer, VIEWER_PANEL_ID } from "./client/open-request";
 import { setClient } from "./client/client-ref";
+import { addFilePanels } from "./client/file-panels";
 import { SettingsScreen } from "./client/settings-screen";
 import { ViewerPanel } from "./client/viewer-panel";
 
 export default function contribute(client: PluginClientContext) {
   setClient(client);
   const removers = [
+    ...addFilePanels(client),
     client.addWorkspacePanel({
       id: VIEWER_PANEL_ID,
       title: messages.message("viewerTitle"),
