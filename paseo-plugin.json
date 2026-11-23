@@ -1,0 +1,9 @@
+{
+  "id": "paseo-file-viewer",
+  "name": "File viewer",
+  "description": "Turn file paths in agent replies into links and preview Markdown, PDF, images, HTML, CSV and code beside the chat.",
+  "media": [],
+  "requirements": {
+    "paseo": ">=0.17.3"
+  }
+}
