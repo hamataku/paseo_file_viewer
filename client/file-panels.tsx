@@ -5,6 +5,7 @@ import {
 } from "@getpaseo/plugin/client";
 import { DocumentFrame, Loading } from "@getpaseo/plugin/client/ui";
 import { Text, View } from "react-native";
+import { pdfViewerUrl } from "./pdf-url";
 import { kindForPath, mimeForPath } from "../shared/file-types";
 import { MediaPreview } from "./media";
 
@@ -20,7 +21,7 @@ function PdfPanel({ file, theme }: PluginFilePanelProps) {
   }
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.surface0 }}>
-      <DocumentFrame url={url.url} />
+      <DocumentFrame url={pdfViewerUrl(url.url)} />
     </View>
   );
 }

@@ -10,6 +10,7 @@ import {
   View,
 } from "react-native";
 import { messages } from "./messages";
+import { pdfViewerUrl } from "./pdf-url";
 import { createBlobUrl, revokeBlobUrl } from "./web";
 
 type Theme = PluginHostProps["theme"];
@@ -154,7 +155,7 @@ export function FramePreview({
   if (!url) return <>{fallback}</>;
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.surface0 }}>
-      <DocumentFrame url={url} />
+      <DocumentFrame url={mimeType === "application/pdf" ? pdfViewerUrl(url) : url} />
     </View>
   );
 }
